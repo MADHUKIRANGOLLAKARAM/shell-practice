@@ -6,3 +6,4 @@ elif [ $num -eq 18 ]; then
 else
     echo "you are not eligible to vote..."
 fi
+echo "$#"
