@@ -4,8 +4,9 @@ if [ $userid -ne 0 ]; then
     exit 1
 fi
 
-echo "dnf install nginx -y"
+
 echo "installing nginx...."
+echo "dnf install nginx -y"
 
 if [ $? -eq 0 ]; then
     echo "nginx installed successfully.."
