@@ -6,7 +6,7 @@ fi
 
 
 echo "installing nginx...."
-echo "dnf install nginx -y"
+dnf install nginx -y
 
 if [ $? -eq 0 ]; then
     echo "nginx installed successfully.."
