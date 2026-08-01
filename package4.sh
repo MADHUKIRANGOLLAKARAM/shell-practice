@@ -6,23 +6,23 @@ mkdir -p $LOG_FOLDER
 LOG_FILE="/var/log/shell-script/$0.log"
 
 if [ $USERID -ne 0 ]; then
-    echo "you are not in root user environment.."
+    echo "you are not in root user environment.." &>> $LOG_FILE
     exit 1
 fi
 
 validate(){
     if [ $1 -ne 0 ];then
-        echo "$2 failure..."
+        echo "$2 failure..." &>> $LOG_FILE
     else 
-        echo "$2 success.."
+        echo "$2 success.." &>> $LOG_FILE
     fi
 }
 
-dnf install nginx -y
+dnf install nginx -y &>> $LOG_FILE
 validate $? "installing nginx "
 
-dnf install mysql -y
+dnf install mysql -y &>> $LOG_FILE
 validate $? "installing mysql"
 
-dnf install nodejs -y
+dnf install nodejs -y &>> $LOG_FILE
 validate $? "installing nodejs"
