@@ -3,7 +3,7 @@
 USERID=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 mkdir -p $LOG_FOLDER
-LOG-FILE="/var/log/shell-script/$0.log"
+LOG_FILE="/var/log/shell-script/$0.log"
 
 if [ $USERID -ne 0 ]; then
     echo "you are not in root user environment.."
