@@ -18,11 +18,11 @@ validate(){
     fi
 }
 
-dnf install nginx -y &>> $LOG_FILE
-validate $? "installing nginx "
+dnf remove nginx -y &>> $LOG_FILE
+validate $? "removing nginx "
 
-dnf install mysql -y &>> $LOG_FILE
-validate $? "installing mysql"
+dnf remove mysql -y &>> $LOG_FILE
+validate $? "removing mysql"
 
-dnf install nodejs -y &>> $LOG_FILE
-validate $? "installing nodejs"
+dnf remove nodejs -y &>> $LOG_FILE
+validate $? "removing nodejs"
