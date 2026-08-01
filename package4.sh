@@ -21,5 +21,6 @@ validate(){
 for package in $@ 
 do 
     dnf install $package -y &>> $LOG_FILE
+    echo "$package installation success..."
 done
 
