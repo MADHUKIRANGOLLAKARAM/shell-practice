@@ -22,7 +22,7 @@ dnf install nginx -y &>> Log_File
 validate $? "installing nginx ..."
 
 dnf install mysql -y &>> Log_File
-validate $? "installing mysql"
+validate $? "installing cc"
 
 dnf install nodejs -y &>> Log_File
 validate $? "installing nodejs"
