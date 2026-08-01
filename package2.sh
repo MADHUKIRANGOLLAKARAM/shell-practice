@@ -21,7 +21,7 @@ fi
 dnf install nginx -y &>> Log_File
 validate $? "installing nginx ..."
 
-dnf install mysql -y &>> Log_File
+dnf install cc -y &>> Log_File
 validate $? "installing cc"
 
 dnf install nodejs -y &>> Log_File
