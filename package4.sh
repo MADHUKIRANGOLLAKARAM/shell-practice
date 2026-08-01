@@ -18,11 +18,8 @@ validate(){
     fi
 }
 
-dnf remove nginx -y &>> $LOG_FILE
-validate $? "removing nginx "
+for package in $@ 
+do 
+    dnf install $package -y &>> $LOG_FILE
+done
 
-dnf remove mysql -y &>> $LOG_FILE
-validate $? "removing mysql"
-
-dnf remove nodejs -y &>> $LOG_FILE
-validate $? "removing nodejs"
