@@ -8,7 +8,7 @@ b=1
 
 for ((i=1; i<=num; i++))
 do
-    echo -n "$a"
+    echo -n "$a "
     sum=$((a+b))
     a=$b
     b=$sum
