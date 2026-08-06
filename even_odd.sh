@@ -26,3 +26,4 @@ then
 else
     echo "$num is not a Prime number"
 fi
+
