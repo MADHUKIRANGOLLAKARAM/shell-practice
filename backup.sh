@@ -46,6 +46,8 @@ if [ -z "$FILES_TO_DELETE" ]; then
     log "No files are found to achieve.."
 else
     log "Files are found to achieve ..."
+    ZIP_FILE_NAME="$DESTINATION_DIR/old-logs.tar.gz"
+    log "archieve name :$ZIP_FILE_NAME "
     while IFS= read -r filepath;
     do 
     log "deleating file : $(basename $filepath)"
