@@ -33,7 +33,7 @@ fi
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
 log(){
-    echo -e "$(date "+%y-%m-%d:%h:M:%s") | $1 "
+    echo -e "$(date "+%y-%m-%d:%H:%M:%s") | $1 "
 }
 
 log "backup started..."
