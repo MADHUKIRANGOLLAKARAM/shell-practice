@@ -20,11 +20,11 @@ if [ $# -lt 2 ]; then
     usage
 fi
 
-if [ ! -d SOURCE_DIR ]; then
+if [ ! -d $SOURCE_DIR ]; then
     echo "source directory is not exist : $SOURCE_DIR"
 fi
 
-if [ ! -d DESTINATION_DIR ]; then
+if [ ! -d $DESTINATION_DIR ]; then
     echo "destination directory is not exist : $DESTINATION_DIR"
 fi
 
