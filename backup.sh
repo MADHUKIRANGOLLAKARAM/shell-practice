@@ -33,7 +33,7 @@ fi
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
 log(){
-    echo -e "$(date "+%y-%m-%d:%H:%M:%s") | $1 "
+    echo -e "$(date "+%F:%H:%M:%s") | $1 "
 }
 
 log "backup started..."
@@ -44,6 +44,6 @@ log "days :$DAYS"
 while IFS= read -r filepath;
 do 
     log "deleating file : $(basename $filepath)"
-    log "deleated file : $filepath"
+    log "deleated file : $(basename $filepath)"
 
 done <<< $FILES_TO_DELETE
