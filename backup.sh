@@ -45,14 +45,22 @@ log "days :$DAYS"
 if [ -z "$FILES_TO_DELETE" ]; then
     log "No files are found to achieve.."
 else
-    log "Files are found to achieve ..."
+    log "Files are found to archieve ..."
     ZIP_FILE_NAME="$DESTINATION_DIR.tar.gz"
     log "archieve name :$ZIP_FILE_NAME "
-   # tar -zcvf $ZIP_FILE_NAME $FILES_TO_DELETE
-    while IFS= read -r filepath;
-    do 
-    log "deleating file : $(basename $filepath)"
-    log "deleated file : $(basename $filepath)"
+   tar -zcvf "$ZIP_FILE_NAME" "$FILES_TO_DELETE"
 
-    done <<< $FILES_TO_DELETE
+   # check archive success or not
+   if [ -f $ZIP_FILE_NAME ]; then
+       log "archive is success.."
+        while IFS= read -r filepath;
+        do 
+        log "deleating file : $(basename $filepath)"
+        log "deleated file : $(basename $filepath)"
+
+        done <<< $FILES_TO_DELETE
+    else
+        log "archival is failure .."
+        exit 1
+    fi
 fi
