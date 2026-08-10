@@ -51,6 +51,7 @@ else
         while IFS= read -r filepath;
         do
             log "deleting a file : $filepath"
+            rm -r $filepath
             log "deleted file: $filepath "
 
         done <<< $FILES_TO_DELETE
