@@ -40,3 +40,10 @@ log "backup started..."
 log "source directory : $SOURCE_DIR"
 log "destination directory : $DESTINATION_DIR "
 log "days :$DAYS"
+
+while IFS= read -r filepath;
+do 
+    log "deleating file : $filepath"
+    log "deleated file : $filepath"
+
+done <<< $FILES_TO_DELETE
