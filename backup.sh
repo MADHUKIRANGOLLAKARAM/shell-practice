@@ -1,6 +1,11 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
+LOGS_DIR="/var/log/shell-script"
+LOG_FILE="$LOGS_DIR/$(basename $0).log"
+SOURCE_DIR="$1"
+DESTINATION_DIR="$2"
+DAYS=${3:-10}  #10 days as default
 
 if [ $USER_ID -ne 0 ]; then
     echo "please enetr as root user"
@@ -15,3 +20,11 @@ usage(){
 if [ $# -lt 2 ]; then
     usage
 fi
+
+if [ ! -d $SOURCE_DIR ]; then
+    echo "$SOURCE_DIR is not exist"
+    exit 1
+fi
+
+if [ ! -d $DESTINATION_DIR ]; then
+ echo "$DESTINATION_DIR is not exist"
