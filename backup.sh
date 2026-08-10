@@ -43,7 +43,7 @@ log "days :$DAYS"
 
 while IFS= read -r filepath;
 do 
-    log "deleating file : $filepath"
+    log "deleating file : $(basename $filepath)"
     log "deleated file : $filepath"
 
 done <<< $FILES_TO_DELETE
