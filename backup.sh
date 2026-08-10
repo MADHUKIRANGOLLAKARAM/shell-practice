@@ -22,10 +22,18 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo "$SOURCE_DIR is not exist"
+    echo "source directory :$SOURCE_DIR is not exist"
     exit 1
 fi
 
 if [ ! -d $DESTINATION_DIR ]; then
- echo "$DESTINATION_DIR is not exist"
+    echo "destination directory :$DESTINATION_DIR is not exist"
 fi
+
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
+
+log(){
+    echo -e "$(date "+%y-%m-%d:%h:M:%s") | $1 "
+}
+
+log "backup started..."
