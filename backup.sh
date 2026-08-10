@@ -41,9 +41,15 @@ log "source directory : $SOURCE_DIR"
 log "destination directory : $DESTINATION_DIR "
 log "days :$DAYS"
 
-while IFS= read -r filepath;
-do 
+
+if [ -z $FILES_TO_DELETE ]; then
+    log "No files are found to achieve.."
+else
+    log "Files are found to achieve ..."
+    while IFS= read -r filepath;
+    do 
     log "deleating file : $(basename $filepath)"
     log "deleated file : $(basename $filepath)"
 
-done <<< $FILES_TO_DELETE
+    done <<< $FILES_TO_DELETE
+fi
