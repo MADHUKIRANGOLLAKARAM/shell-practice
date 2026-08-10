@@ -18,17 +18,20 @@ usage(){
 
 if [ $# -lt 2 ]; then
     usage
+    exit 1
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
     echo "source directory is not exist : $SOURCE_DIR"
+    exit 1
 fi
 
 if [ ! -d $DESTINATION_DIR ]; then
     echo "destination directory is not exist : $DESTINATION_DIR"
+    exit 1
 fi
 
-FILES_TO_DELETE=$(find $SOURCE_DIR "*.log" -type f -mtime +10)
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +10)
 
 
 while IFS= read -r filepath;
