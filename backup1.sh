@@ -34,7 +34,7 @@ fi
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +10)
 
 log(){
-    echo -e "$(date "+%f:%H:%M:%S" ) | S1 "
+    echo -e "$(date "+%F:%H:%M:%S" ) | $1 "
 }
 
 if [ -z "$FILES_TO_DELETE" ]; then
