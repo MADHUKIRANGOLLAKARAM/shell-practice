@@ -42,7 +42,7 @@ log "destination directory : $DESTINATION_DIR "
 log "days :$DAYS"
 
 
-if [ -z $FILES_TO_DELETE ]; then
+if [ -z "$FILES_TO_DELETE" ]; then
     log "No files are found to achieve.."
 else
     log "Files are found to achieve ..."
