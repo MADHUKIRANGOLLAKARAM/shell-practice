@@ -28,3 +28,4 @@ fi
 
 if [ ! -d $DESTINATION_DIR ]; then
  echo "$DESTINATION_DIR is not exist"
+fi
