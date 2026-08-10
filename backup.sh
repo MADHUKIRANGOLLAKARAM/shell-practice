@@ -48,7 +48,7 @@ else
     log "Files are found to archieve ..."
     ZIP_FILE_NAME="$DESTINATION_DIR.tar.gz"
     log "archieve name :$ZIP_FILE_NAME "
-   tar -zcvf "$ZIP_FILE_NAME" "$FILES_TO_DELETE"
+   tar -zcvf "$ZIP_FILE_NAME" $FILES_TO_DELETE
 
    # check archive success or not
    if [ -f $ZIP_FILE_NAME ]; then
