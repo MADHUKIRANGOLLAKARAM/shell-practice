@@ -37,3 +37,6 @@ log(){
 }
 
 log "backup started..."
+log "source directory : $SOURCE_DIR"
+log "destination directory : $DESTINATION_DIR "
+log "days :$DAYS"
