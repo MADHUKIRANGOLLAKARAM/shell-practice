@@ -33,10 +33,28 @@ fi
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +10)
 
+log(){
+    echo -e "$(date "+%f:%H:%M:%S" ) | S1 "
+}
 
-while IFS= read -r filepath;
-do
-    echo "deleting a file : $filepath"
-    echo "deleted file: $filepath "
+if [ -z "$FILES_TO_DELETE" ]; then
+    log "no files to archive"
+else 
+    log "files found to archive"
+    ZIP_FILE_NAME="$DESTINATION_DIR/$(basename $0).tar.gz"
+    log "zip file name is : $ZIP_FILE_NAME"
+    tar -zcvf "$ZIP_FILE_NAME" $FILES_TO_DELETE
 
-done <<< $FILES_TO_DELETE
+    if [ -f $ZIP_FILE_NAME ]; then
+        log "archive is success"
+
+        while IFS= read -r filepath;
+        do
+            log "deleting a file : $filepath"
+            log "deleted file: $filepath "
+
+        done <<< $FILES_TO_DELETE
+    else
+        log "archive is failure.."
+    fi
+fi
