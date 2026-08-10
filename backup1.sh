@@ -6,7 +6,7 @@ DAYS=${3:-10}
 LOG_FOLDER="/var/log/shell-script"
 LOG_FILE="$LOG_FOLDER/$(basename $0).log"
 
-if [ USER_ID -ne 0 ]; then
+if [ $USER_ID -ne 0 ]; then
     echo "you are not in root environment..."
     exit 1
 fi
